@@ -40,3 +40,10 @@ jobs:
           name: python-package
           path: dist/
 
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build . -t my-app:latest
