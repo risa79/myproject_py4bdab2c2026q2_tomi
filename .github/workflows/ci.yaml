@@ -25,3 +25,12 @@ jobs:
 
       - name: Run Ruff
         run: uvx ruff check .
+
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build . -t my-app:latest
+
