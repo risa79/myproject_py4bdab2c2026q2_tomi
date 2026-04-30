@@ -14,3 +14,8 @@ myproject-py4bdab2c2026q2-tomi = "myproject_py4bdab2c2026q2_tomi:main"
 [build-system]
 requires = ["uv_build>=0.8.14,<0.9.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.12",
+]
