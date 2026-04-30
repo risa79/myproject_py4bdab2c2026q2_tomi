@@ -27,7 +27,7 @@ jobs:
         run: uvx ruff check .
 
       - name: Run tests
-        run: uv run pytest
+        run: uvx pytest
         env:
           PYTHONPATH: src
 
