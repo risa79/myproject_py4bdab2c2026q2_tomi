@@ -1,21 +1,23 @@
 [project]
 name = "myproject-py4bdab2c2026q2-tomi"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.11"
-dependencies = [
-    "ipython>=9.13.0",
+description = "Homework 05: CI/CD and Docker"
+authors = [
+    { name = "Tomiris", email = "your_email@example.com" }
 ]
+dependencies = [
+    "click",
+    "pytest",
+]
+requires-python = ">=3.11"
 
+# Это критически важная часть, чтобы команда "python -m prime_pack_tomiris" работала
 [project.scripts]
-myproject-py4bdab2c2026q2-tomi = "myproject_py4bdab2c2026q2_tomi:main"
+prime_pack = "prime_pack_tomiris.cli:main"
 
 [build-system]
-requires = ["uv_build>=0.8.14,<0.9.0"]
-build-backend = "uv_build"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
-[dependency-groups]
-dev = [
-    "ruff>=0.15.12",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
